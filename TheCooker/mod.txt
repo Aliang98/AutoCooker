@@ -1,0 +1,93 @@
+{
+	"name" : "The Cooker",
+	"description" : "Dockyard/Cook Off/Rats/Miami/Border Crystal/Santa Workshop/Lab Rats/Counterfeit",
+	"author" : "Playhouse/Mayzone",
+	"contact" : "Discord: Mayzone#2647",
+	"version" : "24",
+	"blt_version" : 2,
+	"image" : "vip.png",
+	"priority" : 1,
+	"undisablable" : false,
+	"disable_safe_mode" : true,
+	"updates" : [
+		{
+			"identifier" : "id60123098dfkjhb34thecookermod",
+			"host" : {
+				"meta" : "https://github.com/Mayzone/The-Cooker/raw/master/updater.json",
+				"download" : "https://github.com/Mayzone/The-Cooker/raw/master/TheCooker.zip",
+				"patchnotes" : "https://github.com/Mayzone/The-Cooker"
+			}
+		}
+	],
+	"hooks" : [
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "loc/menu.lua"
+		},
+		{ "hook_id" : "lib/network/base/networkpeer", "script_path" : "identifier.lua"
+		},
+		{ "hook_id" : "lib/network/matchmaking/networkmatchmakingsteam", "script_path" : "identifier.lua"
+		},
+		{ "hook_id" : "lib/network/base/networkmanager", "script_path" : "identifier.lua"
+		},
+		{ "hook_id" : "lib/managers/chatmanager", "script_path" : "identifier.lua"
+		},
+		{ "hook_id" : "lib/managers/gameplaycentralmanager", "script_path" : "identifier.lua"
+		},
+		{ "hook_id" : "lib/network/base/basenetworksession", "script_path" : "identifier.lua"
+		},
+		{ "hook_id" : "lib/managers/menumanager", "script_path" : "delaycall.lua"
+		},
+		{ "hook_id" : "lib/managers/playermanager", "script_path" : "autocooker anticheat.lua"
+		},
+		{ "hook_id" : "lib/network/base/networkpeer", "script_path" : "autocooker anticheat.lua"
+		},
+		{ "hook_id" : "core/lib/setups/coresetup", "script_path" : "loc/localization.lua"
+		},
+		{ "hook_id" : "core/lib/managers/mission/coremissionscriptelement", "script_path" : "lab spawn/missionelements.lua"
+		},
+		{ "hook_id" : "lib/managers/gameplaycentralmanager", "script_path" : "lab spawn/missionelements.lua"
+		},
+		{ "hook_id" : "lib/units/vehicles/animatedvehiclebase", "script_path" : "crash fixes.lua"
+		},
+		{ "hook_id" : "lib/managers/playermanager", "script_path" : "auto secure/secure.lua"
+		},
+		{ "hook_id" : "lib/network/base/clientnetworksession", "script_path" : "disconnect.lua"
+		},
+		{ "hook_id" : "lib/network/base/basenetworksession", "script_path" : "disconnect.lua"
+		},
+		{ "hook_id" : "lib/network/matchmaking/networkmatchmakingsteam", "script_path" : "reconnect.lua"
+		},
+		{ "hook_id" : "lib/tweak_data/tweakdata", "script_path" : "color menu/load menu.lua"
+		},
+		{ "hook_id" : "core/lib/setups/coresetup", "script_path" : "color menu/load menu.lua"
+		}
+	],
+	"keybinds" : [
+		{
+            "keybind_id" : "keybind_to_autocooker",
+            "name" : "Menu",
+            "description" : "Toggle The Cooker Menu",
+            "script_path" : "autocooker menu.lua",
+            "run_in_menu" : true,
+            "run_in_game" : true,
+            "localized" : false
+        },
+		{
+            "keybind_id" : "keybind_to_more_loot",
+            "name" : "More Loot",
+            "description" : "More Loot",
+            "script_path" : "autocooker more bags.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+            "localized" : false
+        },
+		{
+            "keybind_id" : "keybind_to_less_loot",
+            "name" : "Less Loot",
+            "description" : "Less Loot",
+            "script_path" : "autocooker less bags.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+            "localized" : false
+        }
+    ]
+}
